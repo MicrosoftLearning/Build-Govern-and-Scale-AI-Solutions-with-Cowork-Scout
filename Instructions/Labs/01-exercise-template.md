@@ -2,7 +2,7 @@
 lab:
     title: 'Exercise Title - Be descriptive.'
     description: 'Sentence describing the lab. Include names of key technologies and products'
-    duration: 00  # duration in minutes
+    duration: 90  # duration in minutes
     level: 100 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
     islab: true # if this is not a lab that should be listed in the catalog, set to false
     status: 'in-development' # in-development or released
@@ -18,7 +18,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 In this exercise you will <!-- provide a description of what they'll do and why it;s important -->
 
-This exercise should take approximately **XX** minutes to complete. <!-- update with estimated duration -->
+This exercise should take approximately **90** minutes to complete. <!-- update with estimated duration -->
 
 ## Before you start
 
