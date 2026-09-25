@@ -2,8 +2,6 @@ remote_theme: MicrosoftLearning/Jekyll-Theme
 exclude:
   - readme.md
   - .github/
-header_pages:
-  - index.html
 author: Microsoft Learning
 twitter_username: mslearning
 github_username:  MicrosoftLearning
@@ -12,4 +10,5 @@ plugins:
   - jekyll-mentions
   - jemoji
 markdown: GFM
-title: Lab Exercises
+title: Build, Govern, and Scale AI Solutions
+description: A hands-on Team Week experience with Cowork and Scout.

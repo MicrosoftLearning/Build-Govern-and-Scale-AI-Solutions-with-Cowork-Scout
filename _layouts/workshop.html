@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="theme-color" content="#ffffff">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/workshop.css' | relative_url }}">
+    <script src="{{ '/assets/js/workshop.js' | relative_url }}?v=4" defer></script>
+  </head>
+  <body class="{{ page.body_class }}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Build, Govern, and Scale AI Solutions home">
+          <span class="site-brand__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span><strong>AI Skill Building</strong><small>Cowork + Scout</small></span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span class="menu-button__icon" aria-hidden="true"></span>
+          <span class="sr-only">Open navigation</span>
+        </button>
+        <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/framing-the-challenge/' | relative_url }}">Framing the challenge</a>
+          <a href="{{ '/creating-a-prototype/' | relative_url }}">Creating a prototype</a>
+          <a href="{{ '/prototype-to-scale-challenge/' | relative_url }}">Prototype-to-scale challenge</a>
+          <a href="{{ '/scaling-options/' | relative_url }}">Scaling options</a>
+          <a href="{{ '/taking-your-prototype-to-the-next-level/' | relative_url }}">Next level</a>
+          <button class="search-button" type="button" data-search-open>
+            <span aria-hidden="true">&#128269;</span> Search
+            <kbd>Ctrl K</kbd>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Microsoft. All rights reserved.</p>
+      <a href="https://github.com/MicrosoftLearning/Build-Govern-and-Scale-AI-Solutions-with-Cowork-Scout">View on GitHub</a>
+    </footer>
+
+    <dialog class="search-dialog" aria-labelledby="search-title">
+      <form method="dialog" class="search-dialog__header">
+        <label id="search-title" for="site-search">Search this workshop</label>
+        <button class="icon-button" value="cancel" aria-label="Close search">&times;</button>
+      </form>
+      <input id="site-search" type="search" placeholder="Search activities and concepts" autocomplete="off">
+      <ul class="search-results" aria-live="polite"></ul>
+    </dialog>
+  </body>
+</html>
