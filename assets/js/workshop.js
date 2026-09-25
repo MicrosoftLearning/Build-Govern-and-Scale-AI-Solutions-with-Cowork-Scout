@@ -182,8 +182,6 @@ if (workflowStepper) {
   showWorkflowStep(0);
 }
 
-const challengePicker = document.querySelector("[data-scale-challenge]");
-const challengeInstructions = document.querySelector("[data-challenge-instructions]");
 const readinessAssessment = document.querySelector("[data-readiness-assessment]");
 const assessmentStatus = document.querySelector("[data-assessment-status]");
 const diagnosisSummary = document.querySelector("[data-diagnosis-summary]");
@@ -234,21 +232,6 @@ function updateReadinessSummary() {
   saveScaleDiagnosis({ readiness: results });
 }
 
-if (challengePicker) {
-  const savedChallenge = scaleDiagnosis.challenge;
-  const savedChallengeInput = savedChallenge
-    ? challengePicker.querySelector(`[value="${savedChallenge}"]`)
-    : null;
-  if (savedChallengeInput) savedChallengeInput.checked = true;
-  challengeInstructions.hidden = !savedChallengeInput;
-
-  challengePicker.addEventListener("change", (event) => {
-    if (!event.target.matches('[name="scale-challenge"]')) return;
-    challengeInstructions.hidden = false;
-    saveScaleDiagnosis({ challenge: event.target.value });
-  });
-}
-
 if (readinessAssessment) {
   Object.entries(scaleDiagnosis.readiness || {}).forEach(([lens, value]) => {
     const savedInput = readinessAssessment.querySelector(`[name="${lens}"][value="${value}"]`);
@@ -274,10 +257,6 @@ if (diagnosisForm) {
     event.preventDefault();
     const readinessComplete = Object.values(getReadinessResults()).every(Boolean);
 
-    if (!scaleDiagnosis.challenge) {
-      diagnosisStatus.textContent = "Choose a scale challenge in Step 1 before saving.";
-      return;
-    }
     if (!readinessComplete) {
       diagnosisStatus.textContent = "Assess all four readiness lenses before saving.";
       return;
@@ -432,26 +411,31 @@ if (scalingDecisionForm) {
 updateSelectedPathSummary();
 
 const nextLevelForm = document.querySelector("[data-next-level-form]");
-const finishSummary = document.querySelector("[data-finish-summary]");
+const readinessComparison = document.querySelector("[data-readiness-comparison-row]")?.parentElement;
 let nextLevelResult = JSON.parse(localStorage.getItem("nextLevelResult") || "{}");
+const readinessComparisonLenses = ["value", "trust-risk", "ownership", "reach-adoption"];
+const readinessStatusLabels = {
+  ready: "Ready",
+  "needs-work": "Needs work",
+  unknown: "Unknown",
+};
 
 function saveNextLevelResult(updates) {
   nextLevelResult = { ...nextLevelResult, ...updates };
   localStorage.setItem("nextLevelResult", JSON.stringify(nextLevelResult));
 }
 
-function updateFinishSummary() {
-  if (!finishSummary) return;
-  const summaryHeading = finishSummary.querySelector("strong");
-  const summaryText = finishSummary.querySelector("p:last-child");
+function updateReadinessComparison() {
+  if (!nextLevelForm || !readinessComparison) return;
+  const currentValues = new FormData(nextLevelForm);
 
-  if (nextLevelResult.complete) {
-    summaryHeading.textContent = "Workshop complete";
-    summaryText.textContent = "Your improvement, remaining gap, and next owner are recorded.";
-  } else {
-    summaryHeading.textContent = "One final reflection";
-    summaryText.textContent = "Complete the three prompts and save your workshop result.";
-  }
+  readinessComparisonLenses.forEach((lens) => {
+    const row = readinessComparison.querySelector(`[data-readiness-comparison-row="${lens}"]`);
+    const previousStatus = scaleDiagnosis.readiness?.[lens];
+    const currentStatus = currentValues.get(`readiness-now-${lens}`);
+    row.querySelector("[data-readiness-before]").textContent = readinessStatusLabels[previousStatus] || "Not assessed";
+    row.querySelector("[data-readiness-now]").textContent = readinessStatusLabels[currentStatus] || "Choose a status";
+  });
 }
 
 if (nextLevelForm) {
@@ -473,24 +457,23 @@ if (nextLevelForm) {
     nextLevelButton.classList.add("is-complete");
   }
 
+  updateReadinessComparison();
+
   nextLevelForm.addEventListener("input", () => {
     saveNextLevelResult({ values: Object.fromEntries(new FormData(nextLevelForm)), complete: false });
     nextLevelButton.textContent = "Complete workshop";
     nextLevelButton.classList.remove("is-complete");
-    updateFinishSummary();
+    updateReadinessComparison();
   });
 
   nextLevelForm.addEventListener("submit", (event) => {
     event.preventDefault();
     saveNextLevelResult({ values: Object.fromEntries(new FormData(nextLevelForm)), complete: true });
-    nextLevelStatus.textContent = "Workshop complete. Your team has recorded the result and next action.";
+    nextLevelStatus.textContent = "Workshop complete. Your team has recorded the readiness comparison and remaining work.";
     nextLevelButton.textContent = "Workshop complete";
     nextLevelButton.classList.add("is-complete");
-    updateFinishSummary();
   });
 }
-
-updateFinishSummary();
 
 document.querySelectorAll("[data-copy-target]").forEach((button) => {
   button.addEventListener("click", async () => {
@@ -512,16 +495,16 @@ document.querySelectorAll("[data-copy-target]").forEach((button) => {
   });
 });
 
-const readyButton = document.querySelector("[data-prototype-ready]");
-if (readyButton) {
-  const isReady = localStorage.getItem("prototypeReady") === "true";
-  readyButton.textContent = isReady ? "Prototype is ready" : "Prototype Ready";
-  readyButton.classList.toggle("is-complete", isReady);
+const debriefButton = document.querySelector("[data-debrief-complete]");
+if (debriefButton) {
+  const isComplete = localStorage.getItem("prototypeDebriefComplete") === "true";
+  debriefButton.textContent = isComplete ? "Debrief complete" : "Mark debrief complete";
+  debriefButton.classList.toggle("is-complete", isComplete);
 
-  readyButton.addEventListener("click", () => {
-    const nextState = localStorage.getItem("prototypeReady") !== "true";
-    localStorage.setItem("prototypeReady", String(nextState));
-    readyButton.textContent = nextState ? "Prototype is ready" : "Prototype Ready";
-    readyButton.classList.toggle("is-complete", nextState);
+  debriefButton.addEventListener("click", () => {
+    const nextState = localStorage.getItem("prototypeDebriefComplete") !== "true";
+    localStorage.setItem("prototypeDebriefComplete", String(nextState));
+    debriefButton.textContent = nextState ? "Debrief complete" : "Mark debrief complete";
+    debriefButton.classList.toggle("is-complete", nextState);
   });
 }

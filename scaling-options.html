@@ -17,9 +17,8 @@ description: Choose an intentional scaling path based on value, risk, ownership,
 
   <article class="activity-content">
     <ol class="page-flow" aria-label="Steps on this page">
-      <li><span>1</span><strong>Review the diagnosis</strong></li>
-      <li><span>2</span><strong>Compare scaling paths</strong></li>
-      <li><span>3</span><strong>Choose a path</strong></li>
+      <li><span>1</span><strong>Compare scaling paths</strong></li>
+      <li><span>2</span><strong>Choose a path</strong></li>
     </ol>
 
     <header class="activity-hero activity-hero--split">
@@ -34,26 +33,18 @@ description: Choose an intentional scaling path based on value, risk, ownership,
       </div>
     </header>
 
-    <section class="scale-phase" aria-labelledby="diagnosis-review-title">
-      <div class="section-heading section-heading--compact">
-        <p class="eyebrow activity-step-label">Step 1: Review the diagnosis</p>
-        <h2 id="diagnosis-review-title">Start with what the prototype needs</h2>
-        <p>Scaling is not the reward for a promising demo. Review the evidence, gaps, and ownership conditions your table identified.</p>
+    <div class="scaling-diagnosis-context" data-scaling-diagnosis-context>
+      <div>
+        <p class="eyebrow">Current diagnosis</p>
+        <strong data-scaling-diagnosis-heading>Complete Page 3 first</strong>
+        <p data-scaling-diagnosis-detail>Your saved readiness results will appear here.</p>
       </div>
-
-      <div class="scaling-diagnosis-context" data-scaling-diagnosis-context>
-        <div>
-          <p class="eyebrow">Current diagnosis</p>
-          <strong data-scaling-diagnosis-heading>Complete Page 3 first</strong>
-          <p data-scaling-diagnosis-detail>Your saved readiness results will appear here.</p>
-        </div>
-        <a class="button button--secondary" href="{{ '/prototype-to-scale-challenge/' | relative_url }}">Review diagnosis</a>
-      </div>
-    </section>
+      <a class="button button--secondary" href="{{ '/prototype-to-scale-challenge/' | relative_url }}">Review diagnosis</a>
+    </div>
 
     <section class="scale-phase" aria-labelledby="paths-title">
       <div class="section-heading section-heading--compact">
-        <p class="eyebrow activity-step-label">Step 2: Compare scaling paths</p>
+        <p class="eyebrow activity-step-label">Step 1: Compare scaling paths</p>
         <h2 id="paths-title">Match the path to the operating need</h2>
         <p>Explore each option. Consider the intended reach, required controls, integration complexity, and who will own the experience.</p>
       </div>
@@ -114,7 +105,7 @@ description: Choose an intentional scaling path based on value, risk, ownership,
 
     <section class="scale-phase" aria-labelledby="path-decision-title">
       <div class="section-heading section-heading--compact">
-        <p class="eyebrow activity-step-label">Step 3: Choose a path</p>
+        <p class="eyebrow activity-step-label">Step 2: Choose a path</p>
         <h2 id="path-decision-title">Make the scaling recommendation explicit</h2>
         <p>Record why this path fits now, what must be true before moving forward, and how the team will know it is working.</p>
       </div>
