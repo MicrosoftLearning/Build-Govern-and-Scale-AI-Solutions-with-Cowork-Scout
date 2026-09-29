@@ -1,0 +1,158 @@
+---
+title: Build your first version
+permalink: /build-your-first-version/
+layout: workshop
+body_class: activity-page first-version-page
+description: Build a first version of the Skilling Needs Advisor with Cowork or Scout.
+---
+
+<div class="activity-shell" markdown="0">
+  <nav class="stage-nav" aria-label="Workshop progress">
+    <a class="stage-nav__item is-current" href="{{ '/build-your-first-version/' | relative_url }}" aria-current="step"><span>01</span> Build your first version</a>
+    <a class="stage-nav__item" href="{{ '/what-would-it-take-to-scale/' | relative_url }}"><span>02</span> What would it take?</a>
+    <a class="stage-nav__item" href="{{ '/improve-and-reassess/' | relative_url }}"><span>03</span> Improve and reassess</a>
+  </nav>
+
+  <article class="activity-content">
+    <ol class="page-flow" aria-label="Steps on this page">
+      <li><span>1</span><strong>Meet the challenge</strong></li>
+      <li><span>2</span><strong>Build an app</strong></li>
+      <li><span>3</span><strong>Test and compare</strong></li>
+    </ol>
+
+    <header class="activity-hero activity-hero--scenario">
+      <p class="eyebrow activity-step-label">Step 1: Meet the challenge</p>
+      <h1>Someone sent you a spreadsheet. Build a better way.</h1>
+      <p class="scenario-context">A new skilling request has landed. Your team currently spends about 20 hours navigating an Excel catalog, finding relevant content, identifying gaps, and deciding what to recommend.</p>
+      <p class="scenario-task">Use Cowork or Scout to build an app that turns the request into an evidence-based skilling recommendation.</p>
+    </header>
+
+    <section class="workflow workflow--first-version" aria-labelledby="blueprint-title">
+      <div class="section-heading section-heading--compact">
+        <p class="eyebrow">Before you build</p>
+        <h2 id="blueprint-title">Give the advisor a simple job</h2>
+        <p>Keep the first version focused on one team and one familiar workflow.</p>
+      </div>
+      <ol class="build-blueprint">
+        <li><span>1</span><div><strong>Define the need</strong><p>Clarify the request, audience, outcome, and timing.</p></div></li>
+        <li><span>2</span><div><strong>Find content</strong><p>Search the Excel catalog for relevant offerings.</p></div></li>
+        <li><span>3</span><div><strong>Assess fit and gaps</strong><p>Identify what is covered, partial, unknown, or missing.</p></div></li>
+        <li><span>4</span><div><strong>Recommend a response</strong><p>Recommend what to reuse, curate, adapt, partner on, or build.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="content-section content-section--tool" aria-labelledby="tool-path-title">
+      <div class="section-kicker activity-step-label">Step 2: Build an app</div>
+      <div>
+        <div class="tool-switcher" role="group" aria-labelledby="tool-path-title">
+          <div class="tool-switcher__intro">
+            <h2 id="tool-path-title">Choose Cowork or Scout</h2>
+            <p>People at the same table can use different tools. You will compare what each approach produces.</p>
+          </div>
+          <div class="tool-switcher__controls">
+            <button type="button" data-tool-select="cowork" aria-pressed="false">Cowork</button>
+            <button type="button" data-tool-select="scout" aria-pressed="false">Scout</button>
+          </div>
+        </div>
+
+        <div class="tool-panel" data-tool-panel="cowork" hidden>
+          <p class="tool-panel__label">Cowork path</p>
+          <h3>Give Cowork the outcome and supporting context</h3>
+          <div class="instruction-accordion">
+            <details class="instruction-step" open>
+              <summary><span>1</span><strong>Start the work</strong></summary>
+              <div class="instruction-step__content"><p>Open Cowork and begin a new task for the Skilling Needs Advisor.</p></div>
+            </details>
+            <details class="instruction-step">
+              <summary><span>2</span><strong>Add the Excel catalog</strong></summary>
+              <div class="instruction-step__content"><p>Use the course catalog file provided by your facilitator.</p></div>
+            </details>
+            <details class="instruction-step">
+              <summary><span>3</span><strong>Use the starter prompt</strong></summary>
+              <div class="instruction-step__content">
+                <p>Copy the prompt into Cowork and review the plan it proposes.</p>
+                <div class="copy-block">
+                  <button class="copy-button" type="button" data-copy-target="cowork-starter-prompt">Copy prompt</button>
+                  <pre id="cowork-starter-prompt">You are a Skilling Needs Advisor. Help our team turn a business request into an evidence-based skilling recommendation.
+
+First, clarify the business outcome, audiences, role-based tasks, desired proficiency, timing, and delivery needs.
+
+Then use the provided Excel catalog to identify relevant content, assess coverage as Full, Partial, or Unknown, and identify meaningful gaps. Recommend whether to Reuse, Curate, Adapt, Partner, or Build.
+
+For every recommendation, cite the supporting catalog evidence, state assumptions, and flag decisions that require human review. Do not invent catalog offerings or treat missing information as confirmed.</pre>
+                  <p class="copy-status" aria-live="polite"></p>
+                </div>
+              </div>
+            </details>
+            <details class="instruction-step">
+              <summary><span>4</span><strong>Steer the result</strong></summary>
+              <div class="instruction-step__content"><p>Answer clarifying questions, inspect the evidence, and correct assumptions.</p></div>
+            </details>
+          </div>
+        </div>
+
+        <div class="tool-panel" data-tool-panel="scout" hidden>
+          <p class="tool-panel__label">Scout path</p>
+          <h3>Give Scout the question and source to investigate</h3>
+          <div class="instruction-accordion">
+            <details class="instruction-step" open>
+              <summary><span>1</span><strong>Start the investigation</strong></summary>
+              <div class="instruction-step__content"><p>Open Scout and begin a new exploration for the Skilling Needs Advisor.</p></div>
+            </details>
+            <details class="instruction-step">
+              <summary><span>2</span><strong>Add the Excel catalog</strong></summary>
+              <div class="instruction-step__content"><p>Use the course catalog file provided by your facilitator.</p></div>
+            </details>
+            <details class="instruction-step">
+              <summary><span>3</span><strong>Use the starter prompt</strong></summary>
+              <div class="instruction-step__content">
+                <p>Copy the prompt into Scout and inspect how it organizes the analysis.</p>
+                <div class="copy-block">
+                  <button class="copy-button" type="button" data-copy-target="scout-starter-prompt">Copy prompt</button>
+                  <pre id="scout-starter-prompt">You are a Skilling Needs Advisor. Help our team turn a business request into an evidence-based skilling recommendation.
+
+First, clarify the business outcome, audiences, role-based tasks, desired proficiency, timing, and delivery needs.
+
+Then use the provided Excel catalog to identify relevant content, assess coverage as Full, Partial, or Unknown, and identify meaningful gaps. Recommend whether to Reuse, Curate, Adapt, Partner, or Build.
+
+For every recommendation, cite the supporting catalog evidence, state assumptions, and flag decisions that require human review. Do not invent catalog offerings or treat missing information as confirmed.</pre>
+                  <p class="copy-status" aria-live="polite"></p>
+                </div>
+              </div>
+            </details>
+            <details class="instruction-step">
+              <summary><span>4</span><strong>Refine the recommendation</strong></summary>
+              <div class="instruction-step__content"><p>Probe missing evidence, challenge assumptions, and improve the response.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-card first-version-test" aria-labelledby="test-title">
+      <div>
+        <p class="eyebrow activity-step-label">Step 3: Test and compare</p>
+        <h2 id="test-title">Put your app to work</h2>
+      </div>
+      <div>
+        <p><strong>Test request:</strong> A product team needs skilling for a new AI-assisted customer support capability launching in eight weeks. Multiple roles need different outcomes, proficiency levels, and delivery approaches.</p>
+        <ol>
+          <li>Run the request through your solution.</li>
+          <li>Inspect what it inferred, asked, recommended, and missed.</li>
+          <li>Make one improvement, then compare Cowork and Scout at your table.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="discussion-callout" aria-labelledby="compare-title">
+      <p class="eyebrow">Table discussion</p>
+      <h2 id="compare-title">Same need. Different approaches.</h2>
+      <ul class="question-list question-list--compact">
+        <li>What did each tool do well?</li>
+        <li>What refinement did each solution need?</li>
+        <li>What did both leave to human judgment?</li>
+      </ul>
+      <a class="button button--primary" href="{{ '/what-would-it-take-to-scale/' | relative_url }}">Continue <span aria-hidden="true">&rarr;</span></a>
+    </section>
+  </article>
+</div>
