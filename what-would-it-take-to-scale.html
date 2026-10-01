@@ -10,55 +10,30 @@ description: Share an unprompted response, then use the facilitated discussion t
   <nav class="stage-nav" aria-label="Workshop progress">
     <a class="stage-nav__item is-complete" href="{{ '/build-your-first-version/' | relative_url }}"><span>01</span> Build your first version</a>
     <a class="stage-nav__item is-current" href="{{ '/what-would-it-take-to-scale/' | relative_url }}" aria-current="step"><span>02</span> What would it take?</a>
-    <a class="stage-nav__item" href="{{ '/improve-and-reassess/' | relative_url }}"><span>03</span> Improve and reassess</a>
+    <a class="stage-nav__item" href="{{ '/improve-and-reassess/' | relative_url }}"><span>03</span> Scale the data source</a>
   </nav>
 
   <article class="activity-content">
-    <header class="activity-hero activity-hero--scenario reveal-hero">
-      <p class="eyebrow">The situation just changed</p>
-      <h1>You want to prove your impact by taking your solution further. But is it ready?</h1>
-      <p class="scenario-context">What began as a small solution for a familiar workflow is now being considered for every new skilling request.</p>
-      <p class="scenario-task">Before people depend on it, what would it take to scale?</p>
+    <header class="activity-hero">
+      <p class="eyebrow">Scale challenge</p>
+      <h1>What would need to be true?</h1>
+      <p>Submit one thing that would need to be true before people across the organization could depend on this solution.</p>
     </header>
 
-    <section class="open-response" aria-labelledby="open-response-title">
-      <div class="open-response__intro">
-        <p class="eyebrow activity-step-label">Start from scratch</p>
-        <h2 id="open-response-title">What would it take to scale?</h2>
-        <p>Write whatever comes to mind. There are no categories, examples, or right answers yet.</p>
-      </div>
-
-      <form class="word-cloud-response" data-word-cloud-response>
-        <label for="scale-response">Your response</label>
-        <textarea id="scale-response" name="scale-response" rows="6" required></textarea>
-        <p class="word-cloud-response__note">The final version will submit this response to the live word cloud. For now, your response stays on this page.</p>
-        <button class="button button--primary" type="submit">Continue to discussion</button>
+    <section class="open-response open-response--form-only" aria-label="Submit your response">
+      <div class="word-cloud-response">
+        <iframe class="word-cloud-response__frame" title="Submit your response for the live word cloud" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_s_tYod-5FOvY1KhEKkGs9UMTAxRlVSVlZWRjdFSUYzWEYxVFhQMk0wNS4u&amp;embed=true" allowfullscreen></iframe>
+        <p class="word-cloud-response__fallback">Having trouble with the embedded form? <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_s_tYod-5FOvY1KhEKkGs9UMTAxRlVSVlZWRjdFSUYzWEYxVFhQMk0wNS4u" target="_blank" rel="noopener noreferrer">Open it in a new tab</a>.</p>
+        <button class="button button--primary" type="button" data-discussion-reveal>I've submitted my response</button>
         <p class="word-cloud-response__status" data-response-status aria-live="polite"></p>
-      </form>
+      </div>
     </section>
 
     <div class="discussion-workspace" data-scaling-framework hidden>
-      <section class="scale-phase" aria-labelledby="discussion-title">
-        <div class="section-heading section-heading--compact">
-          <p class="eyebrow">Use the discussion on screen</p>
-          <h2 id="discussion-title" tabindex="-1">Compare, reconsider, and decide</h2>
-          <p>Capture how your thinking changes as the facilitator reveals the room's responses and guides the discussion.</p>
-        </div>
-
-        <div class="reflection-prompts">
-          <label for="response-covered"><span>What did your first response already cover?</span><textarea id="response-covered" rows="4"></textarea></label>
-          <label for="response-changed"><span>What did the room add or change?</span><textarea id="response-changed" rows="4"></textarea></label>
-          <label for="responsible-next-step"><span>What is the smallest responsible next step?</span><textarea id="responsible-next-step" rows="4"></textarea></label>
-        </div>
-
-      <section class="discussion-output" aria-labelledby="path-output-title">
-        <div>
-          <p class="eyebrow">When the discussion ends</p>
-          <h2 id="path-output-title">Take your decision into the next activity.</h2>
-        </div>
-        <p>You will improve the app, then test whether that change resolves the concerns your table identified.</p>
-        <a class="button button--primary" href="{{ '/improve-and-reassess/' | relative_url }}">Continue <span aria-hidden="true">&rarr;</span></a>
-      </section>
+      <section class="discussion-callout" aria-labelledby="discussion-title">
+        <p class="eyebrow">Response submitted</p>
+        <h2 id="discussion-title" tabindex="-1">Look up for the room's responses.</h2>
+        <p>Your facilitator will reveal the word cloud and guide the scaling discussion.</p>
       </section>
     </div>
   </article>

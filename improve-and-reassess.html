@@ -1,36 +1,30 @@
 ---
-title: Improve and reassess
+title: Scale the data source
 permalink: /improve-and-reassess/
 layout: workshop
 body_class: activity-page reassess-page
-description: Connect a dynamic data source, strengthen one more element, then reassess what remains unresolved.
+description: Rebuild the skilling recommendation app with a current data source, rerun the request, and publish the improved version.
 ---
 
 <div class="activity-shell" markdown="0">
   <nav class="stage-nav" aria-label="Workshop progress">
     <a class="stage-nav__item is-complete" href="{{ '/build-your-first-version/' | relative_url }}"><span>01</span> Build your first version</a>
     <a class="stage-nav__item is-complete" href="{{ '/what-would-it-take-to-scale/' | relative_url }}"><span>02</span> What would it take?</a>
-    <a class="stage-nav__item is-current" href="{{ '/improve-and-reassess/' | relative_url }}" aria-current="step"><span>03</span> Improve and reassess</a>
+    <a class="stage-nav__item is-current" href="{{ '/improve-and-reassess/' | relative_url }}" aria-current="step"><span>03</span> Scale the data source</a>
   </nav>
 
   <article class="activity-content">
-    <header class="activity-hero activity-hero--split">
-      <div>
-        <p class="eyebrow">Two meaningful improvements</p>
-        <h1>Improve the source. Then strengthen one more thing.</h1>
-        <p>Your first version used a point-in-time Excel catalog. Connect it to a dynamic source, improve one additional element, and determine what those changes actually solve.</p>
-      </div>
-      <div class="facilitator-cue facilitator-cue--light">
-        <span>Keep in mind</span>
-        <strong>A better data source improves the solution. It does not make it ready by itself.</strong>
-      </div>
+    <header class="activity-hero">
+      <p class="eyebrow">Rebuild activity</p>
+      <h1>Scale the data source</h1>
+      <p>Replace the point-in-time Excel workbook with the current source provided by your facilitator, then test the same request again.</p>
     </header>
 
-    <section class="scale-phase" aria-labelledby="source-title">
+    <section class="scale-phase scale-phase--rebuild" aria-labelledby="source-title">
       <div class="section-heading section-heading--compact">
-        <p class="eyebrow activity-step-label">Step 1: Improve the source</p>
-        <h2 id="source-title">Connect the dynamic course catalog</h2>
-        <p>Use the source provided by your facilitator, then update your solution so it retrieves current catalog information instead of relying on a static file.</p>
+        <p class="eyebrow activity-step-label">Rebuild and test</p>
+        <h2 id="source-title">Use current data instead of a static file</h2>
+        <p>Keep the request and expected outcome the same so you can see what the source change actually improves.</p>
       </div>
 
       <div class="source-connection">
@@ -38,43 +32,29 @@ description: Connect a dynamic data source, strengthen one more element, then re
         <h3>Update Cowork or Scout</h3>
         <ol>
           <li>Open the solution you built with the Excel catalog.</li>
-          <li>Connect the dynamic source provided by your facilitator.</li>
-          <li>Update the instructions to use that source for catalog evidence.</li>
+          <li>Connect the current course catalog source provided by your facilitator.</li>
+          <li>Update the solution instructions to use that source instead of the uploaded workbook.</li>
+          <li>Confirm that the solution can retrieve current catalog information.</li>
           <li>Run the same request again and inspect what changes.</li>
+          <li>Publish or share the improved version as directed by your facilitator.</li>
         </ol>
+        <details class="instruction-step rebuild-test-request">
+          <summary><span aria-hidden="true">T</span><strong>Reuse the original test request</strong></summary>
+          <div class="instruction-step__content">
+            <div class="copy-block">
+              <button class="copy-button" type="button" data-copy-target="rebuild-test-request">Copy test request</button>
+              <pre id="rebuild-test-request">A product team is launching an AI-assisted customer support capability in eight weeks. Create a skilling plan for support agents, team leads, and content authors. Recommend existing courses, identify gaps, and flag what still needs human review.</pre>
+              <p class="copy-status" aria-live="polite"></p>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 
-    <section class="scale-phase" aria-labelledby="additional-improvement-title">
-      <div class="section-heading section-heading--compact">
-        <p class="eyebrow activity-step-label">Step 2: Strengthen one more element</p>
-        <h2 id="additional-improvement-title">Choose and make one additional improvement</h2>
-        <p>Update your Cowork or Scout instructions with one of these changes, then rerun the same request.</p>
-      </div>
-
-      <fieldset class="improvement-choices">
-        <legend>Choose one improvement</legend>
-        <label><input type="radio" name="additional-improvement" value="traceability"><span><strong>Evidence traceability</strong>Require each recommendation to identify the supporting source.</span></label>
-        <label><input type="radio" name="additional-improvement" value="approval"><span><strong>Human approval</strong>Add a review and approval point before a recommendation is used.</span></label>
-        <label><input type="radio" name="additional-improvement" value="uncertainty"><span><strong>Treatment of uncertainty</strong>Flag missing, conflicting, or ambiguous evidence instead of guessing.</span></label>
-        <label><input type="radio" name="additional-improvement" value="ownership"><span><strong>Ownership</strong>Identify who maintains the instructions, source, and quality.</span></label>
-        <label><input type="radio" name="additional-improvement" value="rationale"><span><strong>Decision rationale</strong>Explain the criteria used and why the recommendation fits.</span></label>
-      </fieldset>
-    </section>
-
-    <section class="scale-phase" aria-labelledby="reassess-title">
-      <div class="section-heading section-heading--compact">
-        <p class="eyebrow activity-step-label">Step 3: Reassess</p>
-        <h2 id="reassess-title">Use the comparison on screen</h2>
-        <p>Discuss the result at your table, then capture your conclusions here.</p>
-      </div>
-
-      <div class="reflection-prompts reflection-prompts--final">
-        <label for="what-improved"><span>What improved after the two changes?</span><textarea id="what-improved" rows="4"></textarea></label>
-        <label for="team-decision"><span>What still requires a team decision?</span><textarea id="team-decision" rows="4"></textarea></label>
-        <label for="next-action"><span>What should happen next?</span><textarea id="next-action" rows="4"></textarea></label>
-      </div>
-      <a class="button button--primary" href="{{ '/' | relative_url }}">Complete workshop</a>
+    <section class="discussion-callout" aria-labelledby="final-debrief-title">
+      <p class="eyebrow">When time is called</p>
+      <h2 id="final-debrief-title">Return to the presentation.</h2>
+      <p>Keep both versions available. Your facilitator will guide the comparison and final debrief.</p>
     </section>
   </article>
 </div>

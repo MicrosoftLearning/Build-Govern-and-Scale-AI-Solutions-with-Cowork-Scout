@@ -12,9 +12,9 @@ const pages = [
     path: "what-would-it-take-to-scale/",
   },
   {
-    title: "Improve and reassess",
+    title: "Scale the data source",
     description:
-      "Connect a dynamic source and determine what remains unresolved",
+      "Connect a current source, rerun the request, and publish the improved version",
     path: "improve-and-reassess/",
   },
 ];
@@ -138,21 +138,20 @@ if (scalingPaths) {
   showScalingPath(0);
 }
 
-const wordCloudResponse = document.querySelector("[data-word-cloud-response]");
+const discussionReveal = document.querySelector("[data-discussion-reveal]");
 
-wordCloudResponse?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
+discussionReveal?.addEventListener("click", () => {
   const discussionWorkspace = document.querySelector("[data-scaling-framework]");
-  const submitButton = wordCloudResponse.querySelector("button[type='submit']");
-  const status = wordCloudResponse.querySelector("[data-response-status]");
+  const status = discussionReveal.parentElement.querySelector(
+    "[data-response-status]",
+  );
 
   if (!discussionWorkspace) return;
 
   discussionWorkspace.hidden = false;
-  submitButton.disabled = true;
-  submitButton.textContent = "Discussion workspace ready";
-  if (status) status.textContent = "Use the prompts below as the facilitator guides the discussion.";
+  discussionReveal.disabled = true;
+  discussionReveal.textContent = "Response submitted";
+  if (status) status.textContent = "The room discussion is next.";
   discussionWorkspace.querySelector("h2")?.focus();
 });
 
