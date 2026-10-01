@@ -32,22 +32,24 @@ description: Rebuild the skilling recommendation app with a current data source,
         <h3>Update Cowork or Scout</h3>
         <ol>
           <li>Open the solution you built with the Excel catalog.</li>
-          <li>Connect the current course catalog source provided by your facilitator.</li>
+          <li>
+            Connect the current course catalog source.
+            <a class="button button--secondary dynamic-source-link" href="https://msit.powerbi.com/groups/841b0dad-53dc-442a-a659-8d15b34cf3fc/reports/4006d8ca-3905-4eba-adbd-584507bd0b05?ctid=72f988bf-86f1-41af-91ab-2d7cd011db47&amp;pbi_source=linkShare" target="_blank" rel="noopener noreferrer">Open the dynamic course catalog</a>
+          </li>
           <li>Update the solution instructions to use that source instead of the uploaded workbook.</li>
           <li>Confirm that the solution can retrieve current catalog information.</li>
           <li>Run the same request again and inspect what changes.</li>
           <li>Publish or share the improved version as directed by your facilitator.</li>
         </ol>
-        <details class="instruction-step rebuild-test-request">
-          <summary><span aria-hidden="true">T</span><strong>Reuse the original test request</strong></summary>
-          <div class="instruction-step__content">
-            <div class="copy-block">
-              <button class="copy-button" type="button" data-copy-target="rebuild-test-request">Copy test request</button>
-              <pre id="rebuild-test-request">A product team is launching an AI-assisted customer support capability in eight weeks. Create a skilling plan for support agents, team leads, and content authors. Recommend existing courses, identify gaps, and flag what still needs human review.</pre>
-              <p class="copy-status" aria-live="polite"></p>
-            </div>
+        <div class="rebuild-test-action">
+          <div>
+            <p class="eyebrow">Test request</p>
+            <strong>Reuse the original request from your first build.</strong>
           </div>
-        </details>
+          <button class="button button--secondary" type="button" data-copy-target="rebuild-test-request">Copy test request</button>
+          <span hidden id="rebuild-test-request">A product team is launching an AI-assisted customer support capability in eight weeks. Create a skilling plan for support agents, team leads, and content authors. Recommend existing courses, identify gaps, and flag what still needs human review.</span>
+          <p class="copy-status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
 

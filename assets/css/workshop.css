@@ -479,7 +479,7 @@ h3 { font-size: 20px; }
 .first-version-page .build-blueprint li { min-height: 124px; padding: 16px; }
 .first-version-page .build-blueprint li > span { width: 26px; height: 26px; margin-bottom: 12px; }
 .first-version-page .build-blueprint strong { margin-bottom: 4px; }
-.first-version-page .content-section { grid-template-columns: 150px minmax(0, 1fr); gap: 24px; padding: 36px 0; }
+.first-version-page .content-section { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 36px 0; }
 .first-version-page .tool-switcher { margin-bottom: 16px; }
 .first-version-page .tool-switcher button { height: 42px; }
 .first-version-page .tool-panel { padding: 20px; }
@@ -551,13 +551,20 @@ h3 { font-size: 20px; }
 .scaling-decision-form .button.is-complete,
 .next-level-form .button.is-complete { border-color: #007a46; background: #007a46; }
 
-.source-connection { padding: 28px; border-left: 4px solid var(--cyan); background: #eaf7f8; }
-.source-connection .eyebrow { margin-bottom: 8px; }
-.source-connection h3 { margin-bottom: 8px; font-size: 25px; }
+.source-connection { padding: 28px; border-left: 6px solid var(--yellow); color: #fff; background: var(--blue-deep); }
+.source-connection .eyebrow { margin-bottom: 8px; color: #9fd9ff; }
+.source-connection h3 { margin-bottom: 8px; color: #fff; font-size: 25px; }
 .source-connection > p:not(.eyebrow, .draft-flag) { max-width: 760px; color: var(--muted); }
 .source-connection .draft-flag { max-width: 760px; }
 .source-connection ol { margin: 22px 0 0; padding-left: 22px; }
 .source-connection li + li { margin-top: 8px; }
+.source-connection .instruction-step { color: var(--ink); }
+.source-connection .dynamic-source-link { display: flex; width: fit-content; min-height: 40px; margin-top: 12px; padding: 0 14px; font-size: 13px; }
+.rebuild-test-action { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 20px; align-items: center; margin-top: 24px; padding: 18px; border: 1px solid #8aa9db; border-radius: 6px; color: var(--ink); background: #fff; }
+.rebuild-test-action .eyebrow { margin: 0 0 4px; color: var(--blue); }
+.rebuild-test-action strong { display: block; font-weight: 600; }
+.rebuild-test-action .copy-status { grid-column: 1 / -1; margin: 0; color: var(--blue); }
+.rebuild-test-action .copy-status:empty { display: none; }
 .scaling-diagnosis-context--compact { margin-bottom: 28px; padding: 18px 20px; }
 .scaling-diagnosis-context--compact strong { font-size: 20px; }
 .scaling-diagnosis-context--compact .button { min-height: 40px; padding: 0 14px; font-size: 12px; }
@@ -623,6 +630,7 @@ h3 { font-size: 20px; }
 .instruction-step summary strong { font-weight: 600; }
 .instruction-step__content { padding: 0 16px 18px 60px; }
 .instruction-step__content > p { margin: 0; color: var(--muted); font-size: 13px; }
+.instruction-step__content .catalog-download { min-height: 40px; margin-top: 14px; padding: 0 14px; font-size: 13px; }
 .instruction-step__content .copy-block { margin-top: 16px; }
 .draft-flag { margin: 14px 0 0; padding: 12px 14px; border: 1px dashed #c99700; border-radius: 6px; color: #665b32; background: #fff8df; font-size: 13px; font-weight: 700; }
 .instruction-step__content > .draft-flag { margin-top: 14px; color: #665b32; }
@@ -650,7 +658,7 @@ h3 { font-size: 20px; }
 .debrief-completion .button.is-complete { border-color: #007a46; background: #007a46; }
 
 .first-version-test { margin-top: 54px; }
-.discussion-callout,
+.discussion-callout { padding: 32px; border-left: 4px solid var(--blue); background: #f1f5ff; }
 .discussion-output { padding: 32px; border-left: 4px solid var(--cyan); background: #eaf7f8; }
 .discussion-callout h2,
 .discussion-output h2 { margin-bottom: 12px; font-size: 30px; }
@@ -675,6 +683,8 @@ h3 { font-size: 20px; }
 .discussion-output > p { color: var(--muted); }
 .discussion-output .button { white-space: nowrap; }
 
+.reassess-page .activity-hero { padding-bottom: 42px; }
+.reassess-page .scale-phase--rebuild { padding-top: 40px; }
 .facilitator-cue { padding: 22px; border-radius: 8px; color: #fff; background: var(--blue-deep); }
 .facilitator-cue span,
 .facilitator-cue strong { display: block; }
@@ -683,16 +693,15 @@ h3 { font-size: 20px; }
 .facilitator-cue--light { color: var(--ink); background: #eaf7f8; }
 .facilitator-cue--light span { color: #006c75; }
 .open-response { display: grid; grid-template-columns: minmax(250px, 0.75fr) minmax(360px, 1.25fr); gap: 38px; align-items: center; padding: 42px; border: 1px solid #b9dfe2; border-radius: 8px; background: #eaf7f8; }
-.open-response--form-only { grid-template-columns: minmax(0, 760px); justify-content: center; }
+.activity-hero--form-title { padding-bottom: 28px; }
+.activity-hero--form-title h1 { margin-bottom: 0; }
+.open-response--form-only { grid-template-columns: minmax(0, 760px); justify-content: center; padding: 0; border: 0; background: transparent; }
 .open-response__intro h2 { margin-bottom: 12px; font-size: 34px; }
 .open-response__intro > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 17px; }
 .word-cloud-response { padding: 18px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #fff; }
 .word-cloud-response__frame { display: block; width: 100%; height: 520px; border: 0; border-radius: 6px; background: #fff; }
 .word-cloud-response__fallback { margin: 12px 0 18px; color: var(--muted); font-size: 12px; }
 .word-cloud-response__fallback a { color: var(--blue); font-weight: 700; }
-.word-cloud-response .button:disabled { border-color: #9baacf; color: #dce6ff; background: #526da9; cursor: not-allowed; }
-.word-cloud-response__status { min-height: 20px; margin: 12px 0 0; color: var(--blue-deep); font-size: 13px; font-weight: 700; }
-.discussion-workspace { margin-top: 54px; }
 .reflection-prompts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .reflection-prompts label { display: flex; min-width: 0; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-soft); }
 .reflection-prompts label > span { min-height: 48px; color: var(--blue-deep); font-family: var(--display); font-size: 18px; font-weight: 700; }
@@ -825,6 +834,9 @@ h3 { font-size: 20px; }
   .open-response { padding: 20px; }
   .improvement-choices label:last-child { grid-column: auto; }
   .word-cloud-response { padding: 12px; }
+  .source-connection .dynamic-source-link { width: 100%; }
+  .rebuild-test-action { grid-template-columns: 1fr; }
+  .rebuild-test-action .button { width: 100%; }
   .debrief-completion .button { width: 100%; }
   .copy-block pre { padding: 66px 18px 20px; font-size: 12px; }
 }

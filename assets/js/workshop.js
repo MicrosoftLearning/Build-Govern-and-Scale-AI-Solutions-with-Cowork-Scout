@@ -6,7 +6,7 @@ const pages = [
     path: "build-your-first-version/",
   },
   {
-    title: "What would it take to scale?",
+    title: "Scale your app challenge",
     description:
       "Discover the scale challenge, share a response, and compare responsible paths",
     path: "what-would-it-take-to-scale/",
@@ -138,39 +138,34 @@ if (scalingPaths) {
   showScalingPath(0);
 }
 
-const discussionReveal = document.querySelector("[data-discussion-reveal]");
-
-discussionReveal?.addEventListener("click", () => {
-  const discussionWorkspace = document.querySelector("[data-scaling-framework]");
-  const status = discussionReveal.parentElement.querySelector(
-    "[data-response-status]",
-  );
-
-  if (!discussionWorkspace) return;
-
-  discussionWorkspace.hidden = false;
-  discussionReveal.disabled = true;
-  discussionReveal.textContent = "Response submitted";
-  if (status) status.textContent = "The room discussion is next.";
-  discussionWorkspace.querySelector("h2")?.focus();
-});
-
 document.querySelectorAll("[data-copy-target]").forEach((button) => {
   button.addEventListener("click", async () => {
     const target = document.getElementById(button.dataset.copyTarget);
-    const status = button.closest(".copy-block")?.querySelector(".copy-status");
+    const status = button
+      .closest(".copy-block, .rebuild-test-action")
+      ?.querySelector(".copy-status");
+    const text = target.textContent.trim();
 
     try {
-      await navigator.clipboard.writeText(target.textContent.trim());
+      await navigator.clipboard.writeText(text);
       button.textContent = "Copied";
       if (status) status.textContent = "Prompt copied to your clipboard.";
     } catch {
-      const selection = window.getSelection();
-      const range = document.createRange();
-      range.selectNodeContents(target);
-      selection.removeAllRanges();
-      selection.addRange(range);
-      if (status) status.textContent = "Prompt selected. Press Ctrl+C to copy.";
+      const fallback = document.createElement("textarea");
+      fallback.value = text;
+      fallback.style.position = "fixed";
+      fallback.style.opacity = "0";
+      document.body.append(fallback);
+      fallback.select();
+      const copied = document.execCommand("copy");
+      fallback.remove();
+
+      if (copied) {
+        button.textContent = "Copied";
+        if (status) status.textContent = "Prompt copied to your clipboard.";
+      } else if (status) {
+        status.textContent = "Copy failed. Select the prompt and copy it manually.";
+      }
     }
   });
 });
