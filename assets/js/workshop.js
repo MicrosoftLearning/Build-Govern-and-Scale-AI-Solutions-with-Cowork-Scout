@@ -142,7 +142,7 @@ document.querySelectorAll("[data-copy-target]").forEach((button) => {
   button.addEventListener("click", async () => {
     const target = document.getElementById(button.dataset.copyTarget);
     const status = button
-      .closest(".copy-block, .rebuild-test-action")
+      .closest(".copy-block")
       ?.querySelector(".copy-status");
     const text = target.textContent.trim();
 

@@ -560,11 +560,7 @@ h3 { font-size: 20px; }
 .source-connection li + li { margin-top: 8px; }
 .source-connection .instruction-step { color: var(--ink); }
 .source-connection .dynamic-source-link { display: flex; width: fit-content; min-height: 40px; margin-top: 12px; padding: 0 14px; font-size: 13px; }
-.rebuild-test-action { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 20px; align-items: center; margin-top: 24px; padding: 18px; border: 1px solid #8aa9db; border-radius: 6px; color: var(--ink); background: #fff; }
-.rebuild-test-action .eyebrow { margin: 0 0 4px; color: var(--blue); }
-.rebuild-test-action strong { display: block; font-weight: 600; }
-.rebuild-test-action .copy-status { grid-column: 1 / -1; margin: 0; color: var(--blue); }
-.rebuild-test-action .copy-status:empty { display: none; }
+.retest-note { margin: 22px 0 0; padding-left: 14px; border-left: 3px solid var(--yellow); color: #fff; }
 .scaling-diagnosis-context--compact { margin-bottom: 28px; padding: 18px 20px; }
 .scaling-diagnosis-context--compact strong { font-size: 20px; }
 .scaling-diagnosis-context--compact .button { min-height: 40px; padding: 0 14px; font-size: 12px; }
@@ -635,7 +631,12 @@ h3 { font-size: 20px; }
 .draft-flag { margin: 14px 0 0; padding: 12px 14px; border: 1px dashed #c99700; border-radius: 6px; color: #665b32; background: #fff8df; font-size: 13px; font-weight: 700; }
 .instruction-step__content > .draft-flag { margin-top: 14px; color: #665b32; }
 
-.instruction-step__content > .test-request { margin: 0; padding: 12px 14px; border-left: 3px solid var(--cyan); color: var(--ink); background: #eaf7f8; }
+.test-specifications > p { margin: 0; }
+.test-specifications > p + p { margin-top: 4px; color: var(--muted); font-size: 13px; }
+.test-specifications ul { margin: 12px 0 0; padding-left: 20px; }
+.test-specifications li { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.test-specifications li::marker { color: var(--blue); }
+.test-specifications strong { color: var(--ink); }
 .test-review { margin: 12px 0 0; padding-left: 20px; font-size: 13px; }
 .test-review li + li { margin-top: 4px; }
 
@@ -835,8 +836,6 @@ h3 { font-size: 20px; }
   .improvement-choices label:last-child { grid-column: auto; }
   .word-cloud-response { padding: 12px; }
   .source-connection .dynamic-source-link { width: 100%; }
-  .rebuild-test-action { grid-template-columns: 1fr; }
-  .rebuild-test-action .button { width: 100%; }
   .debrief-completion .button { width: 100%; }
   .copy-block pre { padding: 66px 18px 20px; font-size: 12px; }
 }
