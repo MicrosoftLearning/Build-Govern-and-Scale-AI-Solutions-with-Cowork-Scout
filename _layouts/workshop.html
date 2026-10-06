@@ -6,8 +6,8 @@
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="theme-color" content="#ffffff">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/workshop.css' | relative_url }}?v=42">
-    <script src="{{ '/assets/js/workshop.js' | relative_url }}?v=20" defer></script>
+    <link rel="stylesheet" href="{{ '/assets/css/workshop.css' | relative_url }}?v=43">
+    <script src="{{ '/assets/js/workshop.js' | relative_url }}?v=21" defer></script>
   </head>
   <body class="{{ page.body_class }}">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -23,9 +23,9 @@
         </button>
         <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
           <a href="{{ '/' | relative_url }}">Home</a>
-          <a href="{{ '/build-your-first-version/' | relative_url }}">Build your first version</a>
-          <a href="{{ '/what-would-it-take-to-scale/' | relative_url }}">What would it take?</a>
-          <a href="{{ '/improve-and-reassess/' | relative_url }}">Scale the data source</a>
+          <a href="{{ '/build-your-first-version/' | relative_url }}">Build</a>
+          <a href="{{ '/what-would-it-take-to-scale/' | relative_url }}">Scale</a>
+          <a href="{{ '/improve-and-reassess/' | relative_url }}">Evolve</a>
           <button class="search-button" type="button" data-search-open>
             <span aria-hidden="true">&#128269;</span> Search
             <kbd>Ctrl K</kbd>

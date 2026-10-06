@@ -1,18 +1,18 @@
 const pages = [
   {
-    title: "Build your first version",
+    title: "Build",
     description:
       "Meet the spreadsheet challenge and build a Skilling Needs Advisor",
     path: "build-your-first-version/",
   },
   {
-    title: "Scale your app challenge",
+    title: "Scale",
     description:
       "Discover the scale challenge, share a response, and compare responsible paths",
     path: "what-would-it-take-to-scale/",
   },
   {
-    title: "Scale the data source",
+    title: "Evolve",
     description:
       "Connect a current source, rerun the request, and publish the improved version",
     path: "improve-and-reassess/",

@@ -554,7 +554,7 @@ h3 { font-size: 20px; }
 .source-connection { padding: 28px; border-left: 6px solid var(--yellow); color: #fff; background: var(--blue-deep); }
 .source-connection .eyebrow { margin-bottom: 8px; color: #9fd9ff; }
 .source-connection h3 { margin-bottom: 8px; color: #fff; font-size: 25px; }
-.source-connection > p:not(.eyebrow, .draft-flag) { max-width: 760px; color: var(--muted); }
+.source-connection > p:not(.eyebrow, .draft-flag, .retest-note) { max-width: 760px; color: var(--muted); }
 .source-connection .draft-flag { max-width: 760px; }
 .source-connection ol { margin: 22px 0 0; padding-left: 22px; }
 .source-connection li + li { margin-top: 8px; }
